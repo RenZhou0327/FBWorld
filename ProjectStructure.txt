@@ -1,0 +1,43 @@
+爬虫部分
+   分为三个子文件——新浪体育和直播吧两个文件夹和download.py文件
+   download.py文件——用于下载图片的文件
+   新浪体育分为六个子文件夹——国际篮球、国际足球、国内篮球、国内足球、棋类运动、其他项目
+   直播吧分为两个子文件夹——足球、篮球
+   每个子文件夹下有如下四个文件：
+     （1）***crawler.py文件——网页爬虫文件
+     （2）***getinf.py——获取日期信息文件
+     （3）***index.txt——爬虫文件获得的索引
+     （4）***inf.txt——获取日期信息文件获得的索引
+   在新浪体育的国际篮球和国内篮球两个字文件夹下，还有如下两个文件：
+     （1）***getimg.py——获取图片信息文件
+     （2）***img.txt——获取图片信息文件获得的索引
+索引部分
+   分为文字索引和图像索引——均在allitems文件夹下
+   文字索引：
+      NewBloomfilter.py——布隆过滤器用于创建索引
+      TextIndex.py——创建索引
+      searchT.py——文字搜索部分函数
+      recommand.py——推荐函数
+      SPORTS_INDEXDIR——文字索引文件夹
+   图像索引：
+      sinadombaimig.txt——图像索引目录
+      sinaglbaimg.txt——图像索引目录
+      query.txt——中间接口
+      test.txt——中间接口
+      dombapic——图像索引文件夹
+      glbapic——图像索引文件夹
+      detect.py——LSH算法实现函数
+    启动网页：
+      initWeb.py——包含对文字、图像索引函数的调用的前后端接口
+前端部分
+    template文件夹中存放4个html模板
+    （1）webindex.html文件——文字搜索首页
+    （2）index2.html——图片搜索首页
+    （3）Rtext.html——文字搜索结果页面
+    （4）image.html——图片搜索结果页面
+    static文件夹中存放前端所需的css和JavaScript库文件
+        allitems/static/style.css存放两个首页的css样式，allitems/static/assets/style.css存放两个搜索结果页面的css样式。
+运行程序时需要将initWeb.py里第22行path替换成电脑中allitems文件夹的绝对地址，在python终端中输入”python“+initWeb.py的地址即可运行网页服务器。
+需要检索的图片需要放在allitems文件夹中，与static等文件夹同级。另外还需将该图片放在allitems/static/img/bg-img文件夹中
+
+
